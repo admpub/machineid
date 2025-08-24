@@ -1,5 +1,5 @@
-module github.com/iseki0/machineid
+module github.com/admpub/machineid
 
-go 1.18
+go 1.23.0
 
-require golang.org/x/sys v0.24.0
+require golang.org/x/sys v0.35.0
