@@ -21,11 +21,11 @@ const (
 // See https://unix.stackexchange.com/questions/144812/generate-consistent-machine-unique-id
 func machineID() (string, error) {
 	id, err := readFile(dbusPath)
-	if err != nil {
+	if err != nil || len(id) == 0 {
 		// try fallback path
 		id, err = readFile(dbusPathEtc)
 	}
-	if err != nil {
+	if err != nil || len(id) == 0 {
 		// try fallback path
 		id, err = readFile(productPath)
 	}
